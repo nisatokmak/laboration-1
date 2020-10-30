@@ -8,10 +8,13 @@ function playGame() {
         alert("Each room has 3 different possible locations where the items might be. If you can't find the items after passing 3 rooms, the monster throws you out from the window.");
         
         
+        var roomChoice = prompt ('Which room do you want to look around in first? Living room, bedroom or kitchen?');
         if (roomChoice === 'bedroom') {
             
+            /*const ammoFound= alert('A box of ammo was found!');
+            var playAgain = confirm("You ran out of options! Do you want to try again?"); */
             var locationChoice= prompt('There are 3 different locations in the bedroom which are: under the bed, wardrobe, dresser. Which one do you choose?');
-            if (locationChoice == 'under the bed' || 'wardrobe');
+            if (locationChoice == 'under the bed' || 'wardrobe') {
                 const choice2 = prompt('There was no item to be found there.The monster is approaching! You must move to the next room! Which room do you choose? Kitchen or living room?');
                 if (choice2 == 'kitchen'){
                     prompt('There are 3 different locations in the kitchen which are: cupboard, storage cabin, oven. Which one do you choose?');
@@ -27,8 +30,8 @@ function playGame() {
                                     alert("Goodbye coward!");
                                 }
                             }else if (locationChoice == 'bookcase'){
-                                const ammoFound= alert('A box of ammo was found!');
-                                alert(ammoFound);
+                                alert('A gun was found!');
+                                alert(gunFound);
                                 prompt('Which room do you want to go to next? Kitchen or living room?')
                                 if (roomChoice== 'kitchen') {
                                     prompt('There are 3 different locations in the kitchen which are: cupboard, storage cabin, oven. Which one do you choose?');
@@ -50,8 +53,10 @@ function playGame() {
                                         alert("Goodbye coward!");
                                         }
                                     } else if (locationChoice == 'bookcase') {
-                                        const ammoFound= alert('A box of ammo was found!');
-                                        alert(ammoFound);
+                                        
+                                        alert('A gun was found!');
+                                        
+                                        
                                     }
                                 }else {
                                     alert('Choose a valid location!');
@@ -70,15 +75,15 @@ function playGame() {
                     if (locationChoice == 'under the couch' || 'behind the TV') {
                         const goOn= confirm('There was no item to be found there.The monster is approaching! You must move to the next room! ');
                         if (goOn == true) {
-                            prompt('There are 3 different locations in the bedroom which are: under the bed, warderobe, drawer. Which one do you choose?');
-                            if (locationChoice == 'under the bed' || 'warderobe') {
+                            prompt('There are 3 different locations in the bedroom which are: under the bed, wardrobe, dresser. Which one do you choose?');
+                            if (locationChoice == 'under the bed' || 'wardrobe') {
                                 if(playAgain == true){
                                     playGame();
                                 }else {
                                     alert("Goodbye coward!");
                                 }
-                            }else if (locationChoice == 'drawer'){
-                                const ammoFound= alert('A box of ammo was found!');
+                            }else if (locationChoice == 'dresser'){
+                                
                                 alert(ammoFound);
                             }else {
                                 alert('Choose a valid location!');
@@ -90,8 +95,8 @@ function playGame() {
                     }
                 }
             } else if (locationChoice== 'dresser') {
-                const gunFound = alert('A gun was found!');
-                alert(gunFound);
+                const ammoFound = alert('A box of ammo was found!');
+                alert(ammoFound);
             } else {
                 alert('Choose a valid location!');
             }
@@ -104,14 +109,14 @@ function playGame() {
                     if (locationChoice == 'under the couch' || 'behind the TV') {
                         const goOn= confirm('There was no item to be found there.The monster is approaching! You must move to the next room! '); 
                         if (goOn == true) {
-                            prompt('There are 3 different locations in the bedroom which are: under the bed, warderobe, drawer. Which one do you choose?');
-                            if (locationChoice == 'under the bed' || 'warderobe') {
+                            prompt('There are 3 different locations in the bedroom which are: under the bed, wardrobe, dresser. Which one do you choose?');
+                            if (locationChoice == 'under the bed' || 'wardrobe') {
                                 if(playAgain == true){
                                     playGame();
                                 }else {
                                     alert("Goodbye coward!");
                                 }
-                            }else if (locationChoice == 'drawer'){
+                            }else if (locationChoice == 'dresser'){
                                 const ammoFound= alert('A box of ammo was found!');
                                 alert(ammoFound);
                             }else {
@@ -122,14 +127,14 @@ function playGame() {
                         }
                     }
                 }else if (choice2 == 'bedroom') {
-                    prompt('There are 3 different locations in the bedroom which are: under the bed, warderobe, drawer. Which one do you choose?');
-                            if (locationChoice == 'under the bed' || 'warderobe') {
+                    prompt('There are 3 different locations in the bedroom which are: under the bed, wardrobe, dresser. Which one do you choose?');
+                            if (locationChoice == 'under the bed' || 'wardrobe') {
                                 if(playAgain == true){
                                     playGame();
                                 }else {
                                     alert("Goodbye coward!");
                                 }
-                            }else if (locationChoice == 'drawer'){
+                            }else if (locationChoice == 'dresser'){
                                 const ammoFound= alert('A box of ammo was found!');
                                 alert(ammoFound);
                             }else {
@@ -151,32 +156,29 @@ function playGame() {
                     alert("Goodbye coward!");
                 }
             }else if (locationChoice == 'bookcase'){
-                const ammoFound= alert('A box of ammo was found!');
-                alert(ammoFound);
+                const gunFound= alert('A gun was found!');
+                alert(gunFound);
             } else {
                 alert('Choose a valid location!');
             }   
         } else {
             alert('Choose a valid room!'); 
         } 
-        
-        
+    
     } else {
         // we chose not to enter the apartment
         alert('You missed what was waiting for you!');
-        var playAgain = confirm("You ran out of options! Dou you want to try again?");
+        
         if(playAgain == true){
             playGame();
-        }else {
+        } else {
             alert("Goodbye coward!");
         }
     }
     
-    if (gunFound==true && ammoFound == true){
-        alert('Congratulations! You slayed the monster!');
-    }else if (gunFound !=true || ammoFound !=true){
-        alert ('Oh no! The monster threw you from the window!');
-    }
+    
+    
+    
 }
 
 playGame();
